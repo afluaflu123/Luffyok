@@ -286,15 +286,11 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("Eɴɢʟɪꜱʜ", callback_data=f"fl#{key}#eng"),
             InlineKeyboardButton("Hɪɴᴅɪ", callback_data=f"fl#{key}#hin")
          ],[
-       
-            InlineKeyboardButton(
-                text=LANGUAGES[i].title(),
-                callback_data=f"fl#{LANGUAGES[i].lower()}#{key}#mal"
-            ),
-            InlineKeyboardButton(
-                text=LANGUAGES[i+1].title(),
-                callback_data=f"fl#{LANGUAGES[i+1].lower()}#{key}"
-            ),
+            InlineKeyboardButton("Tᴇʟᴜɢᴜ", callback_data=f"fl#{key}#tel"),
+            InlineKeyboardButton("Kᴀɴɴᴀᴅᴀ", callback_data=f"fl#{key}#kan")
+         ],[
+            InlineKeyboardButton("Mᴜʟᴛɪ Aᴜᴅɪᴏ", callback_data=f"fl#{key}#multi"),             
+            InlineKeyboardButton("Dᴜᴀʟ Aᴜᴅɪᴏ", callback_data=f"fl#{key}#dual")                                  
         ])
 
     btn.insert(
