@@ -265,7 +265,6 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
         return await query.answer(f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
     search = FRESH.get(key)
     search = search.replace(' ', '_')    
-    for i in range(0, len(LANGUAGES)-1, 2):
     btn = [[
         InlineKeyboardButton("Sᴇʟᴇᴄᴛ Yᴏᴜʀ Dᴇꜱɪʀᴇᴅ Lᴀɴɢᴜᴀɢᴇ ↓", callback_data="ident")
     ],[
