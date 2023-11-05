@@ -834,7 +834,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         ]] 
                     )
                 )
-                mh8 = await query.message.reply(script.CHANNEL_CAP.format(query.from_user.mention, afsu, title, size, uptime),
+                mh8 = await query.message.reply(script.CHANNEL_CAP.format(query.from_user.mention, title, size),
                 True,
                 enums.ParseMode.HTML,
                 disable_web_page_preview=True,
