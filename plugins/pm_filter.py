@@ -1060,7 +1060,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#max_btn#{settings["max_btn"]}#{str(grp_id)}'),
                     InlineKeyboardButton('10' if settings["max_btn"] else f'{MAX_B_TN}',
                                          callback_data=f'setgs#max_btn#{settings["max_btn"]}#{str(grp_id)}')
-                ]           
+                ],
+                [
+                    InlineKeyboardButton('✘ Cʟᴏsᴇ ✘', callback_data='close_data')
+                ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
@@ -1141,7 +1144,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#max_btn#{settings["max_btn"]}#{str(grp_id)}'),
                     InlineKeyboardButton('10' if settings["max_btn"] else f'{MAX_B_TN}',
                                          callback_data=f'setgs#max_btn#{settings["max_btn"]}#{str(grp_id)}')
-                ]               
+                ],
+                [
+                    InlineKeyboardButton('✘ Cʟᴏsᴇ ✘', callback_data='close_data')
+                ]           
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await client.send_message(
@@ -1525,7 +1531,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#max_btn#{settings["max_btn"]}#{str(grp_id)}'),
                     InlineKeyboardButton('10' if settings["max_btn"] else f'{MAX_B_TN}',
                                          callback_data=f'setgs#max_btn#{settings["max_btn"]}#{str(grp_id)}')
-                ]
+                ],
+                [
+                    InlineKeyboardButton('✘ Cʟᴏsᴇ ✘', callback_data='close_data')
+                ]            
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
