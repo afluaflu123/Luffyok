@@ -1,12 +1,30 @@
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 <p align="center">
-  <img src="https://telegra.ph/file/7f5f7906440c8eaa5afc6.jpg" alt="Ben-filter-Bot Logo">
+  <img src="https://telegra.ph/file/3e8a3865af813840144d4.jpg" alt="Cloned Repo Of Luffy Logo">
 </p>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 <h1 align="center">
-  BEN-FILTER-BOT
-</h1>
+  <b> Mᴏɴᴋᴇʏ D. Lᴜғғʏᵛ² </b>
 
-![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=𝑊𝑒𝑙𝑐𝑜𝑚𝑒+𝑇𝑜+TT-Bot;𝐴+𝑠𝑖𝑚𝑝𝑙𝑒+𝑎𝑛𝑑+𝑝𝑜𝑤𝑒𝑟𝑓𝑢𝑙+𝐵𝑜𝑡!;𝐼𝑛𝑑𝑒𝑥𝑒𝑠+𝐹𝑖𝑙𝑒𝑠+𝑎𝑏𝑜𝑣𝑒+2𝐺𝐵;𝐴+𝐵𝑜𝑡+𝑤𝑖𝑡ℎ+𝑑𝑜𝑢𝑏𝑙𝑒+𝑏𝑢𝑡𝑡𝑜𝑛!;𝑆𝑡𝑎𝑟𝑡+𝑚𝑒𝑠𝑠𝑎𝑔𝑒+𝑤𝑖𝑡ℎ+𝑝𝑖𝑐!;𝐴𝑛𝑑+𝑚𝑜𝑟𝑒+𝑓𝑒𝑎𝑡𝑢𝑟𝑒𝑠!)
+<p align="center">
+	<a href="https://t.me/Neon_X_Bot"><img height="25" src="https://github.com/surrealdb/surrealdb/blob/main/img/social/blog.svg" alt="Telegram"></a>
+	&nbsp;
+	<a href="https://t.me/KLMovieGroup"><img height="25" src="https://github.com/surrealdb/surrealdb/blob/main/img/social/github.svg" alt="Telegram"></a>
+	&nbsp;
+    <a href="https://youtube.com/shorts/v66wWBXzVYY?si=s5hpGq5p1jCFe6fR"><img height="25" src="https://github.com/surrealdb/surrealdb/blob/main/img/social/youtube.svg" alt="Youtube"></a>
 </p>
+
+<h2><img height="20" src="https://github.com/Bhai4You/bhai4you/blob/master/anubis/community.svg">&nbsp;&nbsp;DEPLOY</h2>
+
+[![Deploy to Heroku](https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg)](https://heroku.com/deploy/?template=https://github.com/BinBashBanana/deploy-buttons)
+[![Deploy on Railway](https://binbashbanana.github.io/deploy-buttons/buttons/remade/railway.svg)](https://railway.app/new/template?template=https://github.com/BinBashBanana/deploy-buttons)
+[![Deploy to Koyeb](https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/BinBashBanana/deploy-buttons&branch=main&name=deploy-buttons)
+
+[![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://render.com/deploy?repo=https://github.com/BinBashBanana/deploy-buttons)
+[![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy?repository=https://github.com/MyBotGit/Elsa-Strange-mod&branch=main)
+
+<h2><img height="20" src="https://github.com/Bhai4You/bhai4you/blob/master/anubis/features.svg">&nbsp;&nbsp;Features</h2>
+
 
 ## 𝐹𝑒𝑎𝑡𝑢𝑟𝑒𝑠
 - [x] 𝐼𝑀𝐷𝐵 𝑇𝑒𝑚𝑝𝑙𝑎𝑡𝑒 𝑆𝑒𝑡
