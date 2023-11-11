@@ -333,7 +333,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             )
     except:
         pass
-    if lang != "homepage":    
+    
     searchagn = search
     search1 = search
     search2 = search
