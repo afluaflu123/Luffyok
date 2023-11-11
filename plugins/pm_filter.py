@@ -276,7 +276,6 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
     #     search = BUTTONS.get(key)
     #     BUTTONS[key+"1"] = search
     search = FRESH.get(key)
-    BUTTONS[key] = None
     search = search.replace(' ', '_')
     btn = []
     for i in range(0, len(LANGUAGES)-1, 2):
@@ -311,17 +310,11 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
     search = FRESH.get(key)
     search = search.replace("_", " ")
-    lang = ""
-    𝖫𝖺𝗇𝗀𝗎𝖺𝗀e_search = ["mal","tam", "hin", "tel", "kan", "eng", "malayalam","tamil","hindi","telugu","kannada","english", "Malayalam","Tamil","Hindi","Telugu","Kannada","English"]
-    for x in range (len(𝖫𝖺𝗇𝗀𝗎𝖺𝗀e_search)):
-        if 𝖫𝖺𝗇𝗀𝗎𝖺𝗀e_search[x] in search:
-            lang = 𝖫𝖺𝗇𝗀𝗎𝖺𝗀e_search[x]
-            break
-    if lang:
+    baal = lang in search
+    if baal:
         search = search.replace(lang, "")
     else:
         search = search
-    
     req = query.from_user.id
     chat_id = query.message.chat.id
     message = query.message
@@ -333,34 +326,11 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             )
     except:
         pass
-    
-    searchagn = search
-    search1 = search
-    search2 = search
-    search = f"{search} {lang}"
-    BUTTONS0[key] = search
+    if lang != "homepage":
+        search = f"{search} {lang}" 
+    BUTTONS[key] = search
 
     files, offset, total_results = await get_search_results(chat_id, search, offset=0, filter=True)
-    files = [file for file in files if re.search(lang, file.file_name, re.IGNORECASE)]
-    
-    lang1 = "mal" if lang == "malayalam" else "tam" if lang == "tamil" else "hin" if lang == "hindi" else "tel" if lang == "telugu" else "kan" if lang == "kannada" else "eng" if lang == "english" else""
-    search1 = f"{search1} {lang1}"
-    BUTTONS1[key] = search1
-    files1, offset, total_results = await get_search_results(chat_id, search1, offset=0, filter=True)
-    files1 = [file for file in files1 if re.search(lang1, file.file_name, re.IGNORECASE)]
-    
-    if files1:
-        files.extend(files1)   
-   
-    lang2 = "Mal" if lang == "Malayalam" else "Tam" if lang == "Tamil" else "Hin" if lang == "Hindi" else "Tel" if lang == "Telugu" else "Kan" if lang == "Kannada" else "Eng" if lang == "English" else""
-    search2 = f"{search2} {lang2}"
-    BUTTONS2[key] = search2
-    files2, offset, total_results = await get_search_results(chat_id, search2, offset=0, filter=True)
-    files2 = [file for file in files2 if re.search(lang2, file.file_name, re.IGNORECASE)]
-
-    if files2:
-        files.extend(files2)  
-    
     if not files:
         await query.answer("🚫 𝗡𝗼 𝗙𝗶𝗹𝗲 𝗪𝗲𝗿𝗲 𝗙𝗼𝘂𝗻𝗱 🚫", show_alert=1)
         return
@@ -439,8 +409,8 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
     await query.answer()
-    
-    
+     
+
 @Client.on_callback_query(filters.regex(r"^seasons#"))
 async def seasons_cb_handler(client: Client, query: CallbackQuery):
 
@@ -488,7 +458,7 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
     btn.append([InlineKeyboardButton(text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭", callback_data=f"next_{req}_{key}_{offset}")])
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
-
+    
 
 @Client.on_callback_query(filters.regex(r"^fs#"))
 async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
@@ -545,8 +515,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
 
     if files2:
         files.extend(files2)
-
-    files, offset, total_results = await get_search_results(chat_id, search, offset=0, filter=True)
+        
     if not files:
         await query.answer("🚫 𝗡𝗼 𝗙𝗶𝗹𝗲 𝗪𝗲𝗿𝗲 𝗙𝗼𝘂𝗻𝗱 🚫", show_alert=1)
         return
@@ -563,8 +532,8 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             for file in files
         ]
         btn.insert(0, [
-            InlineKeyboardButton("Sᴇɴᴅ Aʟʟ Tᴏ Pᴍ", callback_data=f"sendfiles#{key}"),
-            InlineKeyboardButton("Sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+            InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}"),
+            InlineKeyboardButton("Sᴇʟᴇᴄᴛ ᴀɢᴀɪɴ", callback_data=f"seasons#{key}")
         ])
     else:
         btn = []
@@ -575,27 +544,19 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
             ]
         )
-                             
-    if offset != "":
-        try:
-            if settings['max_btn']:
-                btn.append(
-                    [InlineKeyboardButton("𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𝐍𝐄𝐗𝐓 ➪",callback_data=f"next_{req}_{key}_{offset}")]
-                )
-    
-            else:
-                btn.append(
-                    [InlineKeyboardButton("𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="𝐍𝐄𝐗𝐓 ➪",callback_data=f"next_{req}_{key}_{offset}")]
-                )
-        except KeyError:
-            await save_group_settings(query.message.chat.id, 'max_btn', True)
-            btn.append(
-                [InlineKeyboardButton("𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𝐍𝐄𝐗𝐓 ➪",callback_data=f"next_{req}_{key}_{offset}")]
-            )
-    else:
-        btn.append(
-            [InlineKeyboardButton(text="𝐍𝐎 𝐌𝐎𝐑𝐄 𝐏𝐀𝐆𝐄𝐒 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄",callback_data="pages")]
-        )
+        btn.insert(0, [
+            InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ", url=f"https://telegram.me/{temp.U_NAME}"),
+            InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}")
+        ])
+        
+    offset = 0
+
+    btn.append([
+            InlineKeyboardButton(
+                text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭",
+                callback_data=f"next_{req}_{key}_{offset}"
+                ),
+    ])
     
     if not settings["button"]:
         cur_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
