@@ -315,9 +315,9 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     𝖫𝖺𝗇𝗀𝗎𝖺𝗀e_search = ["mal","tam", "hin", "tel", "kan", "eng", "malayalam","tamil","hindi","telugu","kannada","english", "Malayalam","Tamil","Hindi","Telugu","Kannada","English"]
     for x in range (len(𝖫𝖺𝗇𝗀𝗎𝖺𝗀e_search)):
         if 𝖫𝖺𝗇𝗀𝗎𝖺𝗀e_search[x] in search:
-            sea = 𝖫𝖺𝗇𝗀𝗎𝖺𝗀e_search[x]
+            lang = 𝖫𝖺𝗇𝗀𝗎𝖺𝗀e_search[x]
             break
-    if sea:
+    if lang:
         search = search.replace(lang, "")
     else:
         search = search
@@ -343,8 +343,8 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     files, _, _ = await get_search_results(chat_id, search, max_results=10)
     files = [file for file in files if re.search(lang, file.file_name, re.IGNORECASE)]
     
-    seas1 = "mal" if seas == "malayalam" else "tam" if seas == "tamil" else "hin" if seas == "hindi" else "tel" if seas == "telugu" else "kan" if seas == "kannada" else "eng" if seas == "english" else""
-    search1 = f"{search1} {seas1}"
+    lang1 = "mal" if seas == "malayalam" else "tam" if seas == "tamil" else "hin" if seas == "hindi" else "tel" if seas == "telugu" else "kan" if seas == "kannada" else "eng" if seas == "english" else""
+    search1 = f"{search1} {lang1}"
     BUTTONS1[key] = search1
     files1, _, _ = await get_search_results(chat_id, search1, max_results=10)
     files1 = [file for file in files1 if re.search(seas1, file.file_name, re.IGNORECASE)]
@@ -352,8 +352,8 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     if files1:
         files.extend(files1)   
    
-    seas2 = "Mal" if seas == "Malayalam" else "Tam" if seas == "Tamil" else "Hin" if seas == "Hindi" else "Tel" if seas == "Telugu" else "Kan" if seas == "Kannada" else "Eng" if seas == "English" else""
-    search2 = f"{search2} {seas2}"
+    lang2 = "Mal" if seas == "Malayalam" else "Tam" if seas == "Tamil" else "Hin" if seas == "Hindi" else "Tel" if seas == "Telugu" else "Kan" if seas == "Kannada" else "Eng" if seas == "English" else""
+    search2 = f"{search2} {lang2}"
     BUTTONS2[key] = search2
     files2, _, _ = await get_search_results(chat_id, search2, max_results=10)
     files2 = [file for file in files2 if re.search(seas2, file.file_name, re.IGNORECASE)]
