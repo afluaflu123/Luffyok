@@ -343,20 +343,20 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     files, _, _ = await get_search_results(chat_id, search, max_results=10)
     files = [file for file in files if re.search(lang, file.file_name, re.IGNORECASE)]
     
-    lang1 = "mal" if seas == "malayalam" else "tam" if seas == "tamil" else "hin" if seas == "hindi" else "tel" if seas == "telugu" else "kan" if seas == "kannada" else "eng" if seas == "english" else""
+    lang1 = "mal" if lang == "malayalam" else "tam" if lang == "tamil" else "hin" if lang == "hindi" else "tel" if lang == "telugu" else "kan" if lang == "kannada" else "eng" if lang == "english" else""
     search1 = f"{search1} {lang1}"
     BUTTONS1[key] = search1
     files1, _, _ = await get_search_results(chat_id, search1, max_results=10)
-    files1 = [file for file in files1 if re.search(seas1, file.file_name, re.IGNORECASE)]
+    files1 = [file for file in files1 if re.search(lang1, file.file_name, re.IGNORECASE)]
     
     if files1:
         files.extend(files1)   
    
-    lang2 = "Mal" if seas == "Malayalam" else "Tam" if seas == "Tamil" else "Hin" if seas == "Hindi" else "Tel" if seas == "Telugu" else "Kan" if seas == "Kannada" else "Eng" if seas == "English" else""
+    lang2 = "Mal" if lang == "Malayalam" else "Tam" if lang == "Tamil" else "Hin" if lang == "Hindi" else "Tel" if lang == "Telugu" else "Kan" if lang == "Kannada" else "Eng" if lang == "English" else""
     search2 = f"{search2} {lang2}"
     BUTTONS2[key] = search2
     files2, _, _ = await get_search_results(chat_id, search2, max_results=10)
-    files2 = [file for file in files2 if re.search(seas2, file.file_name, re.IGNORECASE)]
+    files2 = [file for file in files2 if re.search(lang2, file.file_name, re.IGNORECASE)]
 
     if files2:
         files.extend(files2)  
